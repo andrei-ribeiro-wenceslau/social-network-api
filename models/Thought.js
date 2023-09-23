@@ -1,27 +1,41 @@
 const { Schema, model } = require("mongoose");
 
+const reactionSchema = new Schema({
+  reactionId: {
+    type: Schema.Types.ObjectId,
+    default: () => new Types.ObjectId(),
+  },
+  reactionBody: {
+    type: String,
+    required: true,
+    maxlength: 280, // Maximum length of 280 characters
+  },
+  username: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    get: function (createdAt) {
+      return createdAt.toUTCString();
+    },
+  },
+});
+
 const thoughtSchema = new Schema(
   {
     thoughtText: {
       type: String,
       required: true,
-      validate: [
-        // Using the validate property to define custom validation
-        {
-          validator: function (text) {
-            return text.length >= 1 && text.length <= 280;
-          },
-          message: "Thought text must be between 1 and 280 characters",
-        },
-      ],
+      minlength: 1, // Minimum length of 1 character
+      maxlength: 280, // Maximum length of 280 characters
     },
     createdAt: {
       type: Date,
       default: Date.now,
       get: function (createdAt) {
-        // Using a getter method to format the timestamp
-        // Format the date using the custom format ISO string
-        return createdAt.toISOString();
+        return createdAt.toUTCString();
       },
     },
     username: {
@@ -42,7 +56,6 @@ thoughtSchema.virtual("reactionCount").get(function () {
   return this.reactions.length;
 });
 
-// Initialize our Thought model
 const Thought = model("thought", thoughtSchema);
 
 module.exports = Thought;
