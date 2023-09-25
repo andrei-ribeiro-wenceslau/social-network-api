@@ -6,10 +6,6 @@ API for a social network web application where users can share their thoughts, r
 
 - [Introduction](#introduction)
 - [Walkthrough Video](#walkthrough-video)
-- [Features](#features)
-- - [Product Management](#product-management)
-- - [Category Management](#category-management)
-- - [Tag Management](#tag-management)
 - [Getting Started](#getting-started)
 - - [Prerequisites](#prerequisites)
 - - [Installation](#installation)
@@ -30,32 +26,6 @@ The video covers:
 - Demonstration of key features and operations.
 
 Feel free to refer to the video for a comprehensive guide to using the backend.
-
-## Features
-
-### Product Management
-
-- View all products with their details.
-- Get product details by ID.
-- Create new products.
-- Update product details.
-- Delete products.
-
-### Category Management
-
-- View all categories.
-- Get category details by ID.
-- Create new categories.
-- Update category details.
-- Delete categories.
-
-### Tag Management
-
-- View all tags.
-- Get tag details by ID.
-- Create new tags.
-- Update tag details.
-- Delete tags.
 
 ## Getting Started
 
