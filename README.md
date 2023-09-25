@@ -56,7 +56,7 @@ The backend API provides various endpoints to interact with the social network. 
 Contributions are welcome! If you find any issues or have enhancements in mind, feel free to submit pull requests or open issues.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the GPL-3.0 license.
 
 ## Contact
 For any questions or inquiries, please feel free to contact:
